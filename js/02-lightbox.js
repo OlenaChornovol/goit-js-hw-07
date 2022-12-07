@@ -7,7 +7,7 @@ const refs = {
   body: document.body,
 };
 
-const cardGalleryMarkup = makeGalleryItems(newGalleryItems);
+const cardGalleryMarkup = makeGalleryItems(items);
 
 refs.imageContainer.insertAdjacentHTML("beforeend", cardGalleryMarkup);
 

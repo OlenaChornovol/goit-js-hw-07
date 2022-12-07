@@ -65,7 +65,7 @@ function closeModalWindowByEsc(event) {
 const lazyImg = refs.imageContainer.querySelectorAll(".gallery__image");
 
 lazyImg.forEach((image) =>
-  image.addEventListener("load", onImageLoaded, { once: true })
+  image.addEventListener("load", onImgLoaded, { once: true })
 );
 
 function onImgLoaded(event) {
