@@ -1,6 +1,6 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
-const newGalleryItems = [...galleryItems, ...addGalleryItems];
+const newGalleryItems = [...galleryItems];
 
 const refs = {
   imageContainer: document.querySelector(".gallery"),
@@ -27,26 +27,26 @@ const lightBox = new SimpleLightbox(".gallery a", {
   scrollZoom: false,
 });
 
-lightBox.on("shown.simplelightbox", function () {
-  refs.body.classList.add("disable-scroll");
-});
-lightBox.on("closed.simplelightbox", function () {
-  refs.body.classList.remove("disable-scroll");
-});
+// lightBox.on("shown.simplelightbox", function () {
+//   refs.body.classList.add("disable-scroll");
+// });
+// lightBox.on("closed.simplelightbox", function () {
+//   refs.body.classList.remove("disable-scroll");
+// });
 
-const lazyImg = refs.imageContainer.querySelectorAll(".gallery__image");
+// const lazyImg = refs.imageContainer.querySelectorAll(".gallery__image");
 
-lazyImg.forEach((image) =>
-  image.addEventListener("load", onImageLoaded, { once: true })
-);
+// lazyImg.forEach((image) =>
+//   image.addEventListener("load", onImageLoaded, { once: true })
+// );
 
-function onImageLoaded(event) {
-  event.target.classList.add("appear");
-}
+// function onImageLoaded(event) {
+//   event.target.classList.add("appear");
+// }
 
-lazyImg.forEach((image) => image.addEventListener("mouseenter", onMouseEnter));
+// lazyImg.forEach((image) => image.addEventListener("mouseenter", onMouseEnter));
 
-function onMouseEnter(event) {
-  event.target.style.transitionDelay = "100ms";
-  event.target.style.transitionDuration = "500ms";
-}
+// function onMouseEnter(event) {
+//   event.target.style.transitionDelay = "100ms";
+//   event.target.style.transitionDuration = "500ms";
+// }
