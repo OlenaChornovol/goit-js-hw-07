@@ -22,16 +22,16 @@ function makeGalleryItems(items) {
     .join("");
 }
 
-const lightBox = new simpleLightbox(".gallery a", {
+const lightBox = simpleLightBox(".gallery a", {
   captionsData: "alt",
   captionDelay: 250,
   scrollZoom: false,
 });
 
-lightBox.on("shown.simplelightbox", function () {
+lightBox.on("shown.simpleLightBox", function () {
   refs.body.classList.add("disable-scroll");
 });
-lightBox.on("closed.simplelightbox", function () {
+lightBox.on("closed.simpleLightBox", function () {
   refs.body.classList.remove("disable-scroll");
 });
 
