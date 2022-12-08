@@ -21,7 +21,6 @@ function makeGalleryItems(items) {
     })
     .join("");
 }
-
 const lightBox = simpleLightBox(".gallery a", {
   captionsData: "alt",
   captionDelay: 250,
