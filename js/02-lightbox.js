@@ -22,7 +22,7 @@ function makeGalleryItems(items) {
     .join("");
 }
 
-const lightbox = new simpleLightbox(".gallery a", {
+const lightbox = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionDelay: 250,
   scrollZoom: false,
