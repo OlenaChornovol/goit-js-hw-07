@@ -1,6 +1,6 @@
 import { galleryItems } from "./gallery-items.js";
 import { addGalleryItems } from "./addGallery-items.js";
-// Change code below this line
+
 const newGalleryItems = [...galleryItems, ...addGalleryItems];
 
 const refs = {
@@ -21,22 +21,23 @@ function makeGalleryItems(items) {
     })
     .join("");
 }
-const lightBox = simpleLightBox(".gallery a", {
+
+const lightbox = new simpleLightbox(".gallery a", {
   captionsData: "alt",
   captionDelay: 250,
   scrollZoom: false,
 });
 
-lightBox.on("shown.simpleLightBox", function () {
+lightbox.on("shown.simplelightbox", function () {
   refs.body.classList.add("disable-scroll");
 });
-lightBox.on("closed.simpleLightBox", function () {
+lightbox.on("closed.simplelightbox", function () {
   refs.body.classList.remove("disable-scroll");
 });
 
-const lazyImg = refs.imageContainer.querySelectorAll(".gallery__image");
+const lazyImages = refs.imageContainer.querySelectorAll(".gallery__image");
 
-lazyImg.forEach((image) =>
+lazyImages.forEach((image) =>
   image.addEventListener("load", onImageLoaded, { once: true })
 );
 
@@ -44,7 +45,9 @@ function onImageLoaded(event) {
   event.target.classList.add("appear");
 }
 
-lazyImg.forEach((image) => image.addEventListener("mouseenter", onMouseEnter));
+lazyImages.forEach((image) =>
+  image.addEventListener("mouseenter", onMouseEnter)
+);
 
 function onMouseEnter(event) {
   event.target.style.transitionDelay = "100ms";
