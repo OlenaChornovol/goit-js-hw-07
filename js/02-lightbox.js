@@ -38,10 +38,10 @@ lightbox.on("closed.simplelightbox", function () {
 const lazyImages = refs.imageContainer.querySelectorAll(".gallery__image");
 
 lazyImages.forEach((image) =>
-  image.addEventListener("load", onImageLoaded, { once: true })
+  image.addEventListener("load", onImgLoaded, { once: true })
 );
 
-function onImageLoaded(event) {
+function onImgLoaded(event) {
   event.target.classList.add("appear");
 }
 
